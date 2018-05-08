@@ -1,0 +1,57 @@
+// out: ./style.css, compress: false, strictMath: true, clean-css, autoprefixer: last 3 versions
+
+//custom MQ
+@xs: ~ "only screen and (min-width: 768px)";
+@sm: ~ "only screen and (min-width: 1024px)";
+@md: ~ "only screen and (min-width: 1280px)";
+@lg: ~ "only screen and (min-width: 1440px)";
+@xl: ~ "only screen and (min-width: 1921px)";
+
+//colors
+@primary: #2dcb71;
+@secondary: lighten(#2dcb71, 10%);
+@text: rgb(127,140,141);
+
+//Global
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    background-image: linear-gradient(180deg, #4b89c5 0%, #b5c9db 100%);
+    background-size: contain, cover;
+    overflow: auto;
+}
+
+//layout
+.container-all {
+    max-width: 1100px;
+    height: 100vh;
+    margin: 0vh auto;
+    display: flex;
+    background-color: #ebeff1;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
+    @media @sm {
+        margin: 5vh auto;
+        height: 90vh;
+    }
+}
+
+.header {
+    @media @xs {
+        height: 90px;
+    }
+}
+
+aside {
+    background-color: #33495d;
+    min-width: 200px;
+    header {
+        background-color: @primary;
+    }
+}
