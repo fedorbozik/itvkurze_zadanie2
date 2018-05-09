@@ -23,13 +23,13 @@ html,
 body {
     padding: 0;
     margin: 0;
-    background-image: linear-gradient(180deg, #4b89c5 0%, #b5c9db 100%);
-    background-size: contain, cover;
+    /*background: linear-gradient(180deg, #4b89c5 0%, #b5c9db 100%);
+    background-size: contain, cover;*/
     overflow: auto;
 }
 
 //layout
-.container-all {
+.container-all{
     max-width: 1100px;
     height: 100vh;
     margin: 0vh auto;
@@ -55,3 +55,126 @@ aside {
         background-color: @primary;
     }
 }
+
+main {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    header {
+        background-color: #fff;
+    }
+    .container-fluid {
+        @media @xs {
+            padding: 0;
+        }
+    }
+    .header {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    nav {
+        background-color: #fff;
+    }
+    .nav.nav-tabs li {
+        width: 50%;
+        a {
+            margin: 0;
+        }
+    }
+    section {
+        padding: 25px 15px;
+        flex: 1 1 auto;
+        overflow: auto;
+        @media @sm {
+            padding: 30px 30px;
+        }
+    }
+}
+
+.modal-backdrop {
+    background-color: @primary;
+    background-color: #fff;
+}
+
+.main-panel {
+    .nav-tabs {
+        font-weight: 600;
+        b {
+            display: block;
+        }
+    }
+}
+
+.navbar {
+    margin-bottom: 0;
+    position: relative;
+    max-height: none;
+    background-color: #fff;
+    .navbar-header {
+        float: none;
+        text-align: center;
+        .navbar-nav {
+            position: fixed;
+            left: 0;
+            top: 30%;
+            z-index: 1000;
+            @media @xs {
+                position: absolute;
+                top: 10px;
+                left: 15px;
+            }
+            button {
+                display: block;
+                @media @xs {
+                    display: inline-block;
+                }
+            }
+        }
+        .navbar-brand {
+            @media @xs {
+                display: block;
+                float: none;
+                margin: 0 auto;
+            }
+            img {
+                width: 20px;
+                @media @xs {
+                    display: block;
+                    width: 36px;
+                    margin: auto;
+                }
+            }
+        }
+    }
+    .navbar-form {
+        @media @xs {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
+    &.affix {
+        position: relative;
+    }
+    .user {
+        display: block;
+        float: none;
+        padding: 15px 0;
+        &-buttons {
+            float: right;
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
