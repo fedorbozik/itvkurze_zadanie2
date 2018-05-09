@@ -7,6 +7,9 @@
 @lg: ~ "only screen and (min-width: 1440px)";
 @xl: ~ "only screen and (min-width: 1921px)";
 
+//fonts
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,400i,700|Open+Sans:400,700');
+
 //colors
 @primary: #2dcb71;
 @secondary: lighten(#2dcb71, 10%);
@@ -21,10 +24,11 @@
 
 html,
 body {
+    font-family: 'Montserrat', sans-serif;
     padding: 0;
     margin: 0;
-    /*background: linear-gradient(180deg, #4b89c5 0%, #b5c9db 100%);
-    background-size: contain, cover;*/
+    background: linear-gradient(180deg, #4b89c5 0%, #b5c9db 100%);
+    background-size: contain, cover;
     overflow: auto;
 }
 
@@ -41,7 +45,6 @@ body {
         height: 90vh;
     }
 }
-
 .header {
     @media @xs {
         height: 90px;
@@ -51,8 +54,54 @@ body {
 aside {
     background-color: #33495d;
     min-width: 200px;
+    text-transform: uppercase;
+    letter-spacing: 0px;
     header {
         background-color: @primary;
+        color: #fff;
+        font-size: 13pt;
+        letter-spacing: -2px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        img {
+            float: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 10px 0 0;
+        }
+    }
+    nav {
+        width: 100%;
+        font-weight: 700;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        ul {
+            width: 100%;
+            li {
+                padding: 15px 0 15px 0;
+            }
+            a {
+                color: #95a5a6;
+                i {
+                    width: 30%;
+                    font-size: 18pt;
+                    padding: 5px;
+                }
+            }
+            .active {
+                color: #fff;
+                i {
+                    width: 30%;
+                    color: @primary;
+                }
+            }
+        }
     }
 }
 
@@ -133,7 +182,7 @@ main {
         .navbar-brand {
             @media @xs {
                 display: block;
-                float: none;
+                /*float: none;*/
                 margin: 0 auto;
             }
             img {
@@ -163,14 +212,83 @@ main {
         &-buttons {
             float: right;
         }
-
+        &-foto {
+            float: left;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 10px 0 0;
+            transition: all .3s ease;
+            img {
+                display: block;
+                width: 100%;
+            }
+            .affix& {
+                width: 40px;
+                height: 40px;
+            }
+        }
+        &-desc {
+            h2 {
+                margin: 0;
+                font-size: 24pt;
+                color: #2c3e50;
+                text-transform: uppercase;
+                letter-spacing: -2px;
+                padding: .5em 0 .2em 0;
+                i {
+                    font-size: 60%;
+                    padding: 0 0 -10px 0;
+                }
+            }
+            h3 {
+                font-size: 16pt;
+                color: #95a5a6;
+                margin: 0;
+                padding: 0 0 .2em 0;
+                transition: all .3s ease;
+                .affix& {
+                    font-size: 0;
+                    padding: 0;
+                    opacity: 0;
+                }
+            }
+            var {
+                color: #95a5a6;
+                font-size: 16pt;
+                transition: all .3s ease;
+                .affix& {
+                    font-size: 0;
+                    padding: 0;
+                    opacity: 0;
+                }
+            }
+        }
     }
 }
 
+.badge {
+    font-weight: 400;
+    &-danger {
+        background-color: #e74b3b;
+    }
+    .dropdown-toggle & {
+        position: absolute;
+        right: 2px;
+        padding: 2px 5px;
+    }
+}
 
+.dropdown {
+    .btn {
+        position: relative;
+    }
+}
 
+.alert-placeholder {
 
-
+}
 
 
 
