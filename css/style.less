@@ -163,14 +163,31 @@ main {
         float: none;
         text-align: center;
         .navbar-nav {
-            position: fixed;
-            left: 0;
-            top: 30%;
+            position: relative;
+            width: 100%;
             z-index: 1000;
+            left: 15px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            align-content: center;
+            i {
+                font-size: 12pt;
+            }
             @media @xs {
-                position: absolute;
+                position: relative;
                 top: 10px;
                 left: 15px;
+                width: 80%;
+                height: 80%;
+                display: flex;
+                flex-direction: row;
+                align-content: stretch;
+                align-items: stretch;
+                i {
+                    font-size: 16pt;
+                }
             }
             button {
                 display: block;
@@ -178,14 +195,29 @@ main {
                     display: inline-block;
                 }
             }
+            .btn-group {
+                @media @xs {
+                    button {
+                        height: 100%;
+                    }
+                }
+            }
+            .navbar-toggle {
+                @media @xs {
+                    display: none;
+                }
+            }
         }
         .navbar-brand {
+            flex-grow: 1;
+            align-self: center;
             @media @xs {
                 display: block;
-                /*float: none;*/
+                float: none;
                 margin: 0 auto;
             }
             img {
+                margin-left: 40%;
                 width: 20px;
                 @media @xs {
                     display: block;
@@ -211,9 +243,7 @@ main {
         padding: 15px 0;
         &-buttons {
             float: right;
-            a, button {
-                border-radius: 50%;
-            }
+
         }
         &-foto {
             float: left;
@@ -221,7 +251,7 @@ main {
             height: 100px;
             border-radius: 50%;
             overflow: hidden;
-            margin: 0 10px 0 0;
+            margin: 0 20px 0 0;
             transition: all .3s ease;
             img {
                 display: block;
@@ -239,7 +269,7 @@ main {
                 color: #2c3e50;
                 text-transform: uppercase;
                 letter-spacing: -2px;
-                padding: .5em 0 .2em 0;
+                padding: 0em 0 .2em 0;
                 i {
                     font-size: 60%;
                     padding: 0 0 -10px 0;
@@ -271,6 +301,39 @@ main {
     }
 }
 
+.navbar-collapse {
+    .navbar-nav:last-child {
+        text-transform: uppercase;
+        font-weight: 700;
+        .active:after {
+            display:block;
+            content: '';
+            border-bottom: solid 3px @primary;
+            transform: scaleX(1);
+            transition: transform 250ms ease-in-out;
+        }
+        @media @xs {
+            .active a {
+                background-color: #fff;
+            }
+            li {
+                padding-right: 20px;
+            }
+            li:after {
+              display:block;
+              content: '';
+              border-bottom: solid 3px @primary;
+              transform: scaleX(0);
+              transition: transform 250ms ease-in-out;
+            }
+            li:hover:after {
+                transform: scaleX(1);
+            }
+        }
+    }
+}
+
+
 .badge {
     font-weight: 400;
     &-danger {
@@ -279,7 +342,14 @@ main {
     .dropdown-toggle & {
         position: absolute;
         right: 2px;
+        top: 0px;
         padding: 2px 5px;
+        @media @xs {
+            position: absolute;
+            right: 2px;
+            top: 12px;
+            padding: 2px 5px;
+        }
     }
 }
 

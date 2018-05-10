@@ -169,16 +169,51 @@ main section {
   text-align: center;
 }
 .navbar .navbar-header .navbar-nav {
-  position: fixed;
-  left: 0;
-  top: 30%;
+  position: relative;
+  width: 100%;
   z-index: 1000;
+  left: 15px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-align-content: center;
+      -ms-flex-line-pack: center;
+          align-content: center;
+}
+.navbar .navbar-header .navbar-nav i {
+  font-size: 12pt;
 }
 @media only screen and (min-width: 768px) {
   .navbar .navbar-header .navbar-nav {
-    position: absolute;
+    position: relative;
     top: 10px;
     left: 15px;
+    width: 80%;
+    height: 80%;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-align-content: stretch;
+        -ms-flex-line-pack: stretch;
+            align-content: stretch;
+    -webkit-align-items: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+  }
+  .navbar .navbar-header .navbar-nav i {
+    font-size: 16pt;
   }
 }
 .navbar .navbar-header .navbar-nav button {
@@ -190,13 +225,32 @@ main section {
   }
 }
 @media only screen and (min-width: 768px) {
+  .navbar .navbar-header .navbar-nav .btn-group button {
+    height: 100%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .navbar .navbar-header .navbar-nav .navbar-toggle {
+    display: none;
+  }
+}
+.navbar .navbar-header .navbar-brand {
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
+}
+@media only screen and (min-width: 768px) {
   .navbar .navbar-header .navbar-brand {
     display: block;
-    /*float: none;*/
+    float: none;
     margin: 0 auto;
   }
 }
 .navbar .navbar-header .navbar-brand img {
+  margin-left: 40%;
   width: 20px;
 }
 @media only screen and (min-width: 768px) {
@@ -224,17 +278,13 @@ main section {
 .navbar .user-buttons {
   float: right;
 }
-.navbar .user-buttons a,
-.navbar .user-buttons button {
-  border-radius: 50%;
-}
 .navbar .user-foto {
   float: left;
   width: 100px;
   height: 100px;
   border-radius: 50%;
   overflow: hidden;
-  margin: 0 10px 0 0;
+  margin: 0 20px 0 0;
   transition: all .3s ease;
 }
 .navbar .user-foto img {
@@ -251,7 +301,7 @@ main section {
   color: #2c3e50;
   text-transform: uppercase;
   letter-spacing: -2px;
-  padding: .5em 0 .2em 0;
+  padding: 0em 0 .2em 0;
 }
 .navbar .user-desc h2 i {
   font-size: 60%;
@@ -279,6 +329,43 @@ main section {
   padding: 0;
   opacity: 0;
 }
+.navbar-collapse .navbar-nav:last-child {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.navbar-collapse .navbar-nav:last-child .active:after {
+  display: block;
+  content: '';
+  border-bottom: solid 3px #2dcb71;
+  -webkit-transform: scaleX(1);
+      -ms-transform: scaleX(1);
+          transform: scaleX(1);
+  transition: -webkit-transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out;
+}
+@media only screen and (min-width: 768px) {
+  .navbar-collapse .navbar-nav:last-child .active a {
+    background-color: #fff;
+  }
+  .navbar-collapse .navbar-nav:last-child li {
+    padding-right: 20px;
+  }
+  .navbar-collapse .navbar-nav:last-child li:after {
+    display: block;
+    content: '';
+    border-bottom: solid 3px #2dcb71;
+    -webkit-transform: scaleX(0);
+        -ms-transform: scaleX(0);
+            transform: scaleX(0);
+    transition: -webkit-transform 250ms ease-in-out;
+    transition: transform 250ms ease-in-out;
+  }
+  .navbar-collapse .navbar-nav:last-child li:hover:after {
+    -webkit-transform: scaleX(1);
+        -ms-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+}
 .badge {
   font-weight: 400;
 }
@@ -288,7 +375,16 @@ main section {
 .dropdown-toggle .badge {
   position: absolute;
   right: 2px;
+  top: 0px;
   padding: 2px 5px;
+}
+@media only screen and (min-width: 768px) {
+  .dropdown-toggle .badge {
+    position: absolute;
+    right: 2px;
+    top: 12px;
+    padding: 2px 5px;
+  }
 }
 .dropdown .btn {
   position: relative;
