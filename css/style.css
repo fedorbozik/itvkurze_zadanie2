@@ -153,18 +153,12 @@ main section {
   background-color: #fff;
 }
 .main-panel .nav-tabs {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   font-weight: 700;
 }
 .main-panel .nav-tabs a {
   font-size: 8pt;
   text-transform: uppercase;
   letter-spacing: -0.6px;
-  -webkit-align-self: stretch;
-      -ms-flex-item-align: stretch;
-          align-self: stretch;
 }
 .main-panel .nav-tabs b {
   display: block;
