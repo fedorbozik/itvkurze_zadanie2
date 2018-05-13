@@ -147,9 +147,16 @@ main {
 
 .main-panel {
     .nav-tabs {
-        font-weight: 600;
+        font-weight: 700;
+        a {
+            font-size: 8pt;
+            text-transform: uppercase;
+            letter-spacing: -.6px;
+        }
         b {
             display: block;
+            font-size: 34pt;
+            margin-bottom: -5px;
         }
     }
 }
@@ -360,12 +367,57 @@ main {
 }
 
 .alert-placeholder {
-
+    position: fixed;
+    bottom: 0;
+    max-width: 100%;
+    width: 100%;
+    @media @xs {
+        width: auto;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .alert {
+        margin: 10px;
+        box-shadow: 0 0 7px;
+    }
 }
 
+//icons fix
+[class*='fa-']:before {
+    position: relative;
+    bottom: -.10em;
+}
 
-
-
-
+.progress {
+    &-vertical {
+        display: inline-block;
+        vertical-align: bottom;
+        margin-bottom: 0;
+        width: 2em;
+        position: relative;
+        overflow: visible;
+        background-color: transparent;
+        box-shadow: none;
+        .progress-bar {
+            overflow: visible;
+            display: block;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            background-color: @secondary;
+            &:before {
+                content: attr(aria-valuenow) "%";
+                display: block;
+                position: absolute;
+                width: 100%;
+                top: -1.7em;
+                color: black;
+                text-align: center;
+                font-size: .75em;
+                margin-bottom: .2em;
+            }
+        }
+    }
+}
 
 

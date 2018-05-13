@@ -153,10 +153,17 @@ main section {
   background-color: #fff;
 }
 .main-panel .nav-tabs {
-  font-weight: 600;
+  font-weight: 700;
+}
+.main-panel .nav-tabs a {
+  font-size: 8pt;
+  text-transform: uppercase;
+  letter-spacing: -0.6px;
 }
 .main-panel .nav-tabs b {
   display: block;
+  font-size: 34pt;
+  margin-bottom: -5px;
 }
 .navbar {
   margin-bottom: 0;
@@ -388,4 +395,56 @@ main section {
 }
 .dropdown .btn {
   position: relative;
+}
+.alert-placeholder {
+  position: fixed;
+  bottom: 0;
+  max-width: 100%;
+  width: 100%;
+}
+@media only screen and (min-width: 768px) {
+  .alert-placeholder {
+    width: auto;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+}
+.alert-placeholder .alert {
+  margin: 10px;
+  box-shadow: 0 0 7px;
+}
+[class*='fa-']:before {
+  position: relative;
+  bottom: -0.1em;
+}
+.progress-vertical {
+  display: inline-block;
+  vertical-align: bottom;
+  margin-bottom: 0;
+  width: 2em;
+  position: relative;
+  overflow: visible;
+  background-color: transparent;
+  box-shadow: none;
+}
+.progress-vertical .progress-bar {
+  overflow: visible;
+  display: block;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: #52d98c;
+}
+.progress-vertical .progress-bar:before {
+  content: attr(aria-valuenow) "%";
+  display: block;
+  position: absolute;
+  width: 100%;
+  top: -1.7em;
+  color: black;
+  text-align: center;
+  font-size: .75em;
+  margin-bottom: .2em;
 }
