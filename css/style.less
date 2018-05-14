@@ -8,7 +8,7 @@
 @xl: ~ "only screen and (min-width: 1921px)";
 
 //fonts
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,400i,700|Open+Sans:400,700');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,700|Open+Sans:400,700');
 
 //colors
 @primary: #2dcb71;
@@ -152,12 +152,27 @@ main {
             font-size: 8pt;
             text-transform: uppercase;
             letter-spacing: -.6px;
+            align-self: stretch;
         }
         b {
             display: block;
-            font-size: 34pt;
+            font-size: 28pt;
             margin-bottom: -5px;
         }
+    }
+    .tab-content {
+        font-size: 9pt;
+        font-weight: 600;
+        li {
+            line-height: 2.5em;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+    .icon-comment-amount {
+        font-weight: 600;
+        padding: 0 2em 0 0;
     }
 }
 
@@ -217,7 +232,7 @@ main {
         }
         .navbar-brand {
             flex-grow: 1;
-            align-self: center;
+            align-self: flex-start;
             @media @xs {
                 display: block;
                 float: none;
@@ -237,7 +252,7 @@ main {
     .navbar-form {
         @media @xs {
             position: absolute;
-            top: 0;
+            top: 1.4em;
             right: 0;
         }
     }
