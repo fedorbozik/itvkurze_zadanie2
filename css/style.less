@@ -202,6 +202,47 @@ main {
     }
 }
 
+.friend-activity-panel {
+    .panel-heading {
+        background-color: #fff;
+        border-bottom: solid 1px #95a5a6;
+    }
+    .panel-title {
+        font-weight: 700;
+        line-height: 1.5em;
+        text-transform: uppercase;
+        color: #95a5a6;
+        letter-spacing: -1px;
+        font-size: 1.1em;
+    }
+    .list-group {
+        &-item {
+            .user-info {
+                color: #3f9cdb;
+                font-size: 11pt;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: -1px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+                img {
+                    float: none;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    margin: 0 20px 0 10px;
+                }
+                .user-activity {
+                    justify-content: flex-start;
+                }
+            }
+        }
+    }
+}
+
 .navbar {
     margin-bottom: 0;
     position: relative;
@@ -460,5 +501,4 @@ main {
         }
     }
 }
-
 

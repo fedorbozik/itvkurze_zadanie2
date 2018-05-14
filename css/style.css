@@ -209,6 +209,50 @@ main section {
   font-weight: 600;
   padding: 0 2em 0 0;
 }
+.friend-activity-panel .panel-heading {
+  background-color: #fff;
+  border-bottom: solid 1px #95a5a6;
+}
+.friend-activity-panel .panel-title {
+  font-weight: 700;
+  line-height: 1.5em;
+  text-transform: uppercase;
+  color: #95a5a6;
+  letter-spacing: -1px;
+  font-size: 1.1em;
+}
+.friend-activity-panel .list-group-item .user-info {
+  color: #3f9cdb;
+  font-size: 11pt;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+.friend-activity-panel .list-group-item .user-info img {
+  float: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 20px 0 10px;
+}
+.friend-activity-panel .list-group-item .user-info .user-activity {
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
 .navbar {
   margin-bottom: 0;
   position: relative;
