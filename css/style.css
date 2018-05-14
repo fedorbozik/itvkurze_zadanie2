@@ -221,24 +221,26 @@ main section {
   letter-spacing: -1px;
   font-size: 1.1em;
 }
-.friend-activity-panel .list-group-item .user-info {
-  color: #3f9cdb;
-  font-size: 11pt;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: -1px;
+.friend-activity-panel .list-group-item {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-justify-content: flex-start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+.friend-activity-panel .list-group-item .user-info {
+  color: #3f9cdb;
+  font-size: 11pt;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: -1px;
 }
 .friend-activity-panel .list-group-item .user-info img {
   float: none;
@@ -246,12 +248,17 @@ main section {
   height: 30px;
   border-radius: 50%;
   overflow: hidden;
-  margin: 0 20px 0 10px;
+  margin: 0 10px 0 10px;
 }
-.friend-activity-panel .list-group-item .user-info .user-activity {
-  -webkit-justify-content: flex-start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+.friend-activity-panel .list-group-item .user-activity p {
+  margin: 0;
+  padding: 5px 5px 5px 10px;
+  color: #95a5a6;
+  font-size: 11pt;
+  font-weight: 600;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
 }
 .navbar {
   margin-bottom: 0;

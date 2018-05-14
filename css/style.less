@@ -217,27 +217,32 @@ main {
     }
     .list-group {
         &-item {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: stretch;
             .user-info {
                 color: #3f9cdb;
                 font-size: 11pt;
                 font-weight: 600;
                 text-transform: uppercase;
                 letter-spacing: -1px;
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: flex-start;
                 img {
                     float: none;
                     width: 30px;
                     height: 30px;
                     border-radius: 50%;
                     overflow: hidden;
-                    margin: 0 20px 0 10px;
+                    margin: 0 10px 0 10px;
                 }
-                .user-activity {
-                    justify-content: flex-start;
-                }
+            }
+            .user-activity p {
+                margin: 0;
+                padding: 5px 5px 5px 10px;
+                color: #95a5a6;
+                font-size: 11pt;
+                font-weight: 600;
+                align-self: center;
             }
         }
     }
