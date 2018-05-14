@@ -39,8 +39,12 @@ body {
     margin: 0vh auto;
     display: flex;
     background-color: #ebeff1;
-    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
+//    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
     @media @sm {
+        margin: 5vh 0;
+        height: 90vh;
+    }
+    @media @md {
         margin: 5vh auto;
         height: 90vh;
     }
@@ -56,6 +60,7 @@ aside {
     min-width: 200px;
     text-transform: uppercase;
     letter-spacing: 0px;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
     header {
         background-color: @primary;
         color: #fff;
@@ -110,6 +115,7 @@ main {
     display: flex;
     flex-direction: column;
     max-width: 100%;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
     header {
         background-color: #fff;
     }
@@ -120,18 +126,35 @@ main {
     }
     .header {
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
     }
     nav {
         background-color: #fff;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.20);
     }
     .nav.nav-tabs li {
         width: 50%;
         a {
             margin: 0;
+        &:hover {
+            background-color: #fff;
+        }
+        }
+        &:nth-child(2) a {
+            color: #95a5a6;
         }
     }
+    #tab1a a{
+        color: #e67333;
+    }
+    #tab2a a {
+        color: #8e44ad;
+    }
+    #tab3a a {
+        color: #16a085;
+    }
     section {
-        max-width: 100%;
+        max-width: 1100px;
         padding: 25px 15px;
         flex: 1 1 auto;
         overflow: auto;
@@ -163,6 +186,7 @@ main {
         }
     }
     .tab-content {
+        width: 100%;
         font-size: 9pt;
         font-weight: 600;
         li {
@@ -409,8 +433,8 @@ main {
     &-vertical {
         display: inline-block;
         vertical-align: bottom;
-        margin-bottom: 0;
         width: 2em;
+        margin: 0 2em 0 0;
         position: relative;
         overflow: visible;
         background-color: transparent;
@@ -421,7 +445,7 @@ main {
             width: 100%;
             position: absolute;
             bottom: 0;
-            background-color: @secondary;
+            background-color: #16a085;
             &:before {
                 content: attr(aria-valuenow) "%";
                 display: block;
