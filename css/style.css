@@ -259,6 +259,7 @@ main section {
   -webkit-align-self: center;
       -ms-flex-item-align: center;
           align-self: center;
+  background-color: #fff;
 }
 .navbar {
   margin-bottom: 0;
