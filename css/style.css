@@ -384,15 +384,55 @@ main section {
   padding: 15px 0;
 }
 .navbar .user-buttons {
+  /*display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            align-content: center;*/
   float: right;
+  padding: 0 10px 0 0;
+}
+@media only screen and (min-width: 768px) {
+  .navbar .user-buttons {
+    float: right;
+  }
+}
+.navbar .user-buttons a,
+.navbar .user-buttons button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #fff;
+  border-color: #95a5a6;
+}
+.navbar .user-buttons a i,
+.navbar .user-buttons button i {
+  display: block;
+  font-size: 1.3em;
+  color: #95a5a6;
+}
+.navbar .user-buttons a:hover,
+.navbar .user-buttons button:hover {
+  border-color: #2dcb71;
+  background-color: #2dcb71;
+}
+.navbar .user-buttons a:hover i,
+.navbar .user-buttons button:hover i {
+  color: #333;
+}
+.navbar .user-buttons a i {
+  margin: 2px 0 0 -2px;
+}
+.navbar .user-buttons button i {
+  margin: 0 0 4px 0;
 }
 .navbar .user-foto {
   float: left;
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   overflow: hidden;
-  margin: 0 20px 0 0;
+  margin: 0 20px 0 10px;
   transition: all .3s ease;
 }
 .navbar .user-foto img {
@@ -403,20 +443,32 @@ main section {
   width: 40px;
   height: 40px;
 }
+@media only screen and (min-width: 768px) {
+  .navbar .user-foto {
+    width: 100px;
+    height: 100px;
+    margin: 0 20px 0 0;
+  }
+}
 .navbar .user-desc h2 {
   margin: 0;
-  font-size: 24pt;
+  font-size: 1.3em;
   color: #2c3e50;
   text-transform: uppercase;
   letter-spacing: -2px;
   padding: 0em 0 .2em 0;
 }
 .navbar .user-desc h2 i {
-  font-size: 60%;
+  font-size: 70%;
   padding: 0 0 -10px 0;
 }
+@media only screen and (min-width: 768px) {
+  .navbar .user-desc h2 {
+    font-size: 24pt;
+  }
+}
 .navbar .user-desc h3 {
-  font-size: 16pt;
+  font-size: 1.1em;
   color: #95a5a6;
   margin: 0;
   padding: 0 0 .2em 0;
@@ -427,15 +479,25 @@ main section {
   padding: 0;
   opacity: 0;
 }
+@media only screen and (min-width: 768px) {
+  .navbar .user-desc h3 {
+    font-size: 16pt;
+  }
+}
 .navbar .user-desc var {
   color: #95a5a6;
-  font-size: 16pt;
+  font-size: .9em;
   transition: all .3s ease;
 }
 .affix.navbar .user-desc var {
   font-size: 0;
   padding: 0;
   opacity: 0;
+}
+@media only screen and (min-width: 768px) {
+  .navbar .user-desc var {
+    font-size: 16pt;
+  }
 }
 .navbar-collapse .navbar-nav:last-child {
   text-transform: uppercase;
