@@ -363,6 +363,11 @@ main section {
     margin: auto;
   }
 }
+.navbar .navbar-form {
+  /*width: 90%;
+        margin: 0 auto;
+        border: none;*/
+}
 @media only screen and (min-width: 768px) {
   .navbar .navbar-form {
     position: absolute;
