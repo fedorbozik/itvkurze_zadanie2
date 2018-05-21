@@ -211,7 +211,7 @@ main section {
 }
 .friend-activity-panel .panel-heading {
   background-color: #fff;
-  border-bottom: solid 1px #95a5a6;
+  border-bottom: solid 1px #ddd;
 }
 .friend-activity-panel .panel-title {
   font-weight: 700;
@@ -225,19 +225,38 @@ main section {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-justify-content: flex-start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-align-items: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media only screen and (min-width: 768px) {
+  .friend-activity-panel .list-group-item {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-align-items: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+  }
 }
 .friend-activity-panel .list-group-item .user-info {
+  -webkit-align-self: flex-start;
+      -ms-flex-item-align: start;
+          align-self: flex-start;
   color: #3f9cdb;
-  font-size: 11pt;
+  font-size: 1em;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: -1px;
@@ -252,13 +271,42 @@ main section {
 }
 .friend-activity-panel .list-group-item .user-activity p {
   margin: 0;
-  padding: 5px 5px 5px 10px;
+  padding: 0px 5px 0px 10px;
   color: #95a5a6;
-  font-size: 11pt;
+  font-size: .9em;
   font-weight: 600;
+  letter-spacing: -1px;
   -webkit-align-self: center;
       -ms-flex-item-align: center;
           align-self: center;
+  background-color: #fff;
+}
+@media only screen and (min-width: 768px) {
+  .friend-activity-panel .list-group-item .user-activity p {
+    padding: 5px;
+  }
+}
+.friend-activity-panel .list-group-item .user-course p {
+  margin: 0;
+  padding: 3px 5px 5px 0px;
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: -1px;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
+  background-color: #fff;
+}
+.friend-activity-panel .list-group-item .user-time p {
+  margin: 0;
+  padding: 5px 5px 5px 0px;
+  font-size: .8em;
+  font-weight: 400;
+  color: #95a5a6;
+  float: right;
+  -webkit-align-self: flex-end;
+      -ms-flex-item-align: end;
+          align-self: flex-end;
   background-color: #fff;
 }
 .navbar {
