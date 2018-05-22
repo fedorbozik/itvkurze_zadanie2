@@ -217,24 +217,27 @@ main {
     }
     .list-group {
         &-item {
+//            height: 3.5em;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             @media @xs {
-                display: flex;
                 flex-direction: row;
                 justify-content: flex-start;
-                align-items: stretch;
+                align-items: center;
+                white-space: nowrap;
             }
             .user-info {
                 align-self: flex-start;
+                flex-grow: 0;
                 color: #3f9cdb;
                 font-size: 1em;
                 font-weight: 600;
                 text-transform: uppercase;
                 letter-spacing: -1px;
                 img {
+                    align-self: center;
                     float: none;
                     width: 30px;
                     height: 30px;
@@ -243,37 +246,56 @@ main {
                     margin: 0 10px 0 10px;
                 }
             }
-            .user-activity p {
-                margin: 0;
-                padding: 0px 5px 0px 10px;
+            .user-activity {
                 @media @xs {
-                    padding: 5px;
+                    align-self: center;
+                    flex-grow: 0;
                 }
-                color: #95a5a6;
-                font-size: .9em;
-                font-weight: 600;
-                letter-spacing: -1px;
-                align-self: center;
-                background-color: #fff;
+                p {
+                    margin: 0;
+                    padding: 0px 5px 0px 10px;
+                    color: #95a5a6;
+                    font-size: .9em;
+                    font-weight: 600;
+                    letter-spacing: -1px;
+                    @media @xs {
+                        padding: 5px;
+                    }
+                }
             }
-            .user-course p {
-                margin: 0;
-                padding: 3px 5px 5px 0px;
-                font-size: 1em;
-                font-weight: 400;
-                letter-spacing: -1px;
-                align-self: center;
-                background-color: #fff;
+            .user-activity-name {
+                @media @xs {
+                    align-self: center;
+                    flex-grow: 100;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+                p {
+                    margin: 0;
+                    padding: 3px 5px 5px 0px;
+                    font-size: 1em;
+                    font-weight: 400;
+                    text-align: center;
+                    letter-spacing: -1px;
+                    @media @xs {
+                        padding: 5px;
+                        text-align: left;
+                    }
+                }
             }
-            .user-time p {
-                margin: 0;
-                padding: 5px 5px 5px 0px;
-                font-size: .8em;
-                font-weight: 400;
-                color: #95a5a6;
-                float: right;
-                align-self: flex-end;
-                background-color: #fff;
+            .user-time {
+                @media @xs {
+                    align-self: center;
+                    flex-grow: 0;
+                }
+                p {
+                    margin: 0;
+                    padding: 5px 5px 5px 10px;
+                    font-size: .8em;
+                    font-weight: 400;
+                    color: #95a5a6;
+                    float: right;
+                }
             }
         }
     }

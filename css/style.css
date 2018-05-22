@@ -237,24 +237,25 @@ main section {
 }
 @media only screen and (min-width: 768px) {
   .friend-activity-panel .list-group-item {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-flex-direction: row;
         -ms-flex-direction: row;
             flex-direction: row;
     -webkit-justify-content: flex-start;
         -ms-flex-pack: start;
             justify-content: flex-start;
-    -webkit-align-items: stretch;
-        -ms-flex-align: stretch;
-            align-items: stretch;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    white-space: nowrap;
   }
 }
 .friend-activity-panel .list-group-item .user-info {
   -webkit-align-self: flex-start;
       -ms-flex-item-align: start;
           align-self: flex-start;
+  -webkit-flex-grow: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
   color: #3f9cdb;
   font-size: 1em;
   font-weight: 600;
@@ -262,12 +263,25 @@ main section {
   letter-spacing: -1px;
 }
 .friend-activity-panel .list-group-item .user-info img {
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
   float: none;
   width: 30px;
   height: 30px;
   border-radius: 50%;
   overflow: hidden;
   margin: 0 10px 0 10px;
+}
+@media only screen and (min-width: 768px) {
+  .friend-activity-panel .list-group-item .user-activity {
+    -webkit-align-self: center;
+        -ms-flex-item-align: center;
+            align-self: center;
+    -webkit-flex-grow: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+  }
 }
 .friend-activity-panel .list-group-item .user-activity p {
   margin: 0;
@@ -276,38 +290,55 @@ main section {
   font-size: .9em;
   font-weight: 600;
   letter-spacing: -1px;
-  -webkit-align-self: center;
-      -ms-flex-item-align: center;
-          align-self: center;
-  background-color: #fff;
 }
 @media only screen and (min-width: 768px) {
   .friend-activity-panel .list-group-item .user-activity p {
     padding: 5px;
   }
 }
-.friend-activity-panel .list-group-item .user-course p {
+@media only screen and (min-width: 768px) {
+  .friend-activity-panel .list-group-item .user-activity-name {
+    -webkit-align-self: center;
+        -ms-flex-item-align: center;
+            align-self: center;
+    -webkit-flex-grow: 100;
+        -ms-flex-positive: 100;
+            flex-grow: 100;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+.friend-activity-panel .list-group-item .user-activity-name p {
   margin: 0;
   padding: 3px 5px 5px 0px;
   font-size: 1em;
   font-weight: 400;
+  text-align: center;
   letter-spacing: -1px;
-  -webkit-align-self: center;
-      -ms-flex-item-align: center;
-          align-self: center;
-  background-color: #fff;
+}
+@media only screen and (min-width: 768px) {
+  .friend-activity-panel .list-group-item .user-activity-name p {
+    padding: 5px;
+    text-align: left;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .friend-activity-panel .list-group-item .user-time {
+    -webkit-align-self: center;
+        -ms-flex-item-align: center;
+            align-self: center;
+    -webkit-flex-grow: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
+  }
 }
 .friend-activity-panel .list-group-item .user-time p {
   margin: 0;
-  padding: 5px 5px 5px 0px;
+  padding: 5px 5px 5px 10px;
   font-size: .8em;
   font-weight: 400;
   color: #95a5a6;
   float: right;
-  -webkit-align-self: flex-end;
-      -ms-flex-item-align: end;
-          align-self: flex-end;
-  background-color: #fff;
 }
 .navbar {
   margin-bottom: 0;
