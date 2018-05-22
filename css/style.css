@@ -49,7 +49,7 @@ aside {
 }
 aside header {
   background-color: #2dcb71;
-  color: #fff;
+  color: #ffffff;
   font-size: 13pt;
   letter-spacing: -2px;
   display: -webkit-flex;
@@ -104,7 +104,7 @@ aside nav ul a i {
   padding: 5px;
 }
 aside nav ul .active {
-  color: #fff;
+  color: #ffffff;
 }
 aside nav ul .active i {
   width: 30%;
@@ -124,7 +124,7 @@ main {
   box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
 }
 main header {
-  background-color: #fff;
+  background-color: #ffffff;
 }
 @media only screen and (min-width: 768px) {
   main .container-fluid {
@@ -136,7 +136,7 @@ main .header {
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
 }
 main nav {
-  background-color: #fff;
+  background-color: #ffffff;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
 main .nav.nav-tabs li {
@@ -146,7 +146,7 @@ main .nav.nav-tabs li a {
   margin: 0;
 }
 main .nav.nav-tabs li a:hover {
-  background-color: #fff;
+  background-color: #ffffff;
 }
 main .nav.nav-tabs li:nth-child(2) a {
   color: #95a5a6;
@@ -176,7 +176,7 @@ main section {
 }
 .modal-backdrop {
   background-color: #2dcb71;
-  background-color: #fff;
+  background-color: #ffffff;
 }
 .main-panel .nav-tabs {
   font-weight: 700;
@@ -199,18 +199,57 @@ main section {
   font-size: 9pt;
   font-weight: 600;
 }
+.main-panel .tab-content #menu1a li:before,
+.main-panel .tab-content #menu1b li:before {
+  border: solid 3px #e67333;
+}
+.main-panel .tab-content #menu2a li:before,
+.main-panel .tab-content #menu2b li:before {
+  border: solid 3px #8e44ad;
+}
+.main-panel .tab-content #menu3a li:before,
+.main-panel .tab-content #menu3b li:before {
+  border: solid 3px #16a085;
+}
 .main-panel .tab-content li {
   line-height: 2.5em;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.main-panel .tab-content li:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
+.main-panel .tab-content li:before {
+  display: inline-block;
+  content: '';
+  position: absolute;
+  float: left;
+  margin: -15px 0 0 -15px;
+  height: 5em;
+  -webkit-transform: scaleY(0);
+      -ms-transform: scaleY(0);
+          transform: scaleY(0);
+  transition: -webkit-transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out;
+}
+.main-panel .tab-content li:hover:before {
+  -webkit-transform: scaleY(1);
+      -ms-transform: scaleY(1);
+          transform: scaleY(1);
+}
+.main-panel .tab-content .panel-footer a {
+  font-size: 1em;
+  font-weight: 600;
+  text-decoration: none;
+}
 .main-panel .icon-comment-amount {
   font-weight: 600;
   padding: 0 2em 0 0;
 }
 .friend-activity-panel .panel-heading {
-  background-color: #fff;
+  background-color: #ffffff;
   border-bottom: solid 1px #ddd;
 }
 .friend-activity-panel .panel-title {
@@ -220,6 +259,9 @@ main section {
   color: #95a5a6;
   letter-spacing: -1px;
   font-size: 1.1em;
+}
+.friend-activity-panel .panel-title a {
+  text-decoration: none;
 }
 .friend-activity-panel .list-group-item {
   display: -webkit-flex;
@@ -248,6 +290,29 @@ main section {
             align-items: center;
     white-space: nowrap;
   }
+}
+.friend-activity-panel .list-group-item:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
+.friend-activity-panel .list-group-item:before {
+  display: inline-block;
+  content: '';
+  position: absolute;
+  float: left;
+  margin: 0px 0 0 -15px;
+  height: 3.7em;
+  border: solid 3px #8e44ad;
+  -webkit-transform: scaleY(0);
+      -ms-transform: scaleY(0);
+          transform: scaleY(0);
+  transition: -webkit-transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out;
+}
+.friend-activity-panel .list-group-item:hover:before {
+  -webkit-transform: scaleY(1);
+      -ms-transform: scaleY(1);
+          transform: scaleY(1);
 }
 .friend-activity-panel .list-group-item .user-info {
   -webkit-align-self: flex-start;
@@ -312,7 +377,7 @@ main section {
   margin: 0;
   padding: 3px 5px 5px 0px;
   font-size: 1em;
-  font-weight: 400;
+  font-weight: 600;
   text-align: center;
   letter-spacing: -1px;
 }
@@ -340,11 +405,16 @@ main section {
   color: #95a5a6;
   float: right;
 }
+.friend-activity-panel .panel-footer a {
+  font-size: .9em;
+  font-weight: 600;
+  text-decoration: none;
+}
 .navbar {
   margin-bottom: 0;
   position: relative;
   max-height: none;
-  background-color: #fff;
+  background-color: #ffffff;
 }
 .navbar .navbar-header {
   float: none;
@@ -481,7 +551,7 @@ main section {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #fff;
+  background-color: #ffffff;
   border-color: #95a5a6;
 }
 .navbar .user-buttons a i,
@@ -598,7 +668,7 @@ main section {
 }
 @media only screen and (min-width: 768px) {
   .navbar-collapse .navbar-nav:last-child .active a {
-    background-color: #fff;
+    background-color: #ffffff;
   }
   .navbar-collapse .navbar-nav:last-child li {
     padding-right: 20px;

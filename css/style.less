@@ -14,6 +14,13 @@
 @primary: #2dcb71;
 @secondary: lighten(#2dcb71, 10%);
 @text: rgb(127,140,141);
+@tab1a: #e67333;
+@tab2a: #8e44ad;
+@tab3a: #16a085;
+@container-all: #ebeff1;
+@aside: #33495d;
+@white: #fff;
+@gray: #95a5a6;
 
 //Global
 *,
@@ -38,7 +45,7 @@ body {
     height: 100vh;
     margin: 0vh auto;
     display: flex;
-    background-color: #ebeff1;
+    background-color: @container-all;
 //    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
     @media @sm {
         margin: 5vh 0;
@@ -56,14 +63,14 @@ body {
 }
 
 aside {
-    background-color: #33495d;
+    background-color: @aside;
     min-width: 200px;
     text-transform: uppercase;
     letter-spacing: 0px;
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
     header {
         background-color: @primary;
-        color: #fff;
+        color: @white;
         font-size: 13pt;
         letter-spacing: -2px;
         display: flex;
@@ -92,7 +99,7 @@ aside {
                 padding: 20px 0 0px 0;
             }
             a {
-                color: #95a5a6;
+                color: @gray;
                 i {
                     width: 30%;
                     font-size: 18pt;
@@ -100,7 +107,7 @@ aside {
                 }
             }
             .active {
-                color: #fff;
+                color: @white;
                 i {
                     width: 30%;
                     color: @primary;
@@ -117,7 +124,7 @@ main {
     max-width: 100%;
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
     header {
-        background-color: #fff;
+        background-color: @white;
     }
     .container-fluid {
         @media @xs {
@@ -129,7 +136,7 @@ main {
         box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
     }
     nav {
-        background-color: #fff;
+        background-color: @white;
         box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.20);
     }
     .nav.nav-tabs li {
@@ -137,21 +144,21 @@ main {
         a {
             margin: 0;
         &:hover {
-            background-color: #fff;
+            background-color: @white;
         }
         }
         &:nth-child(2) a {
-            color: #95a5a6;
+            color: @gray;
         }
     }
     #tab1a a{
-        color: #e67333;
+        color: @tab1a;
     }
     #tab2a a {
-        color: #8e44ad;
+        color: @tab2a;
     }
     #tab3a a {
-        color: #16a085;
+        color: @tab3a;
     }
     section {
         max-width: 1100px;
@@ -167,7 +174,7 @@ main {
 
 .modal-backdrop {
     background-color: @primary;
-    background-color: #fff;
+    background-color: @white;
 }
 
 .main-panel {
@@ -189,11 +196,53 @@ main {
         width: 100%;
         font-size: 9pt;
         font-weight: 600;
+        #menu1a,
+        #menu1b {
+            li:before {
+                border: solid 3px @tab1a;
+            }
+        }
+        #menu2a,
+        #menu2b {
+            li:before {
+                border: solid 3px @tab2a;
+            }
+        }
+        #menu3a,
+        #menu3b {
+            li:before {
+                border: solid 3px @tab3a;
+            }
+        }
         li {
             line-height: 2.5em;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            &:hover {
+                background-color: #ddd;
+                cursor: pointer;
+            }
+            &:before {
+                display: inline-block;
+                content: '';
+                position: absolute;
+                float: left;
+                margin: -15px 0 0 -15px;
+                height: 5em;
+                transform: scaleY(0);
+                transition: transform 250ms ease-in-out;
+            }
+            &:hover:before {
+                transform: scaleY(1);
+            }
+        }
+        .panel-footer {
+            a {
+                font-size:  1em;
+                font-weight: 600;
+                text-decoration: none;
+            }
         }
     }
     .icon-comment-amount {
@@ -204,16 +253,19 @@ main {
 
 .friend-activity-panel {
     .panel-heading {
-        background-color: #fff;
+        background-color: @white;
         border-bottom: solid 1px #ddd;
     }
     .panel-title {
         font-weight: 700;
         line-height: 1.5em;
         text-transform: uppercase;
-        color: #95a5a6;
+        color: @gray;
         letter-spacing: -1px;
         font-size: 1.1em;
+        a {
+            text-decoration: none;
+        }
     }
     .list-group {
         &-item {
@@ -227,6 +279,24 @@ main {
                 justify-content: flex-start;
                 align-items: center;
                 white-space: nowrap;
+            }
+            &:hover {
+                background-color: #ddd;
+                cursor: pointer;
+            }
+            &:before {
+                display: inline-block;
+                content: '';
+                position: absolute;
+                float: left;
+                margin: 0px 0 0 -15px;
+                height: 3.7em;
+                border: solid 3px @tab2a;
+                transform: scaleY(0);
+                transition: transform 250ms ease-in-out;
+            }
+            &:hover:before {
+                transform: scaleY(1);
             }
             .user-info {
                 align-self: flex-start;
@@ -254,7 +324,7 @@ main {
                 p {
                     margin: 0;
                     padding: 0px 5px 0px 10px;
-                    color: #95a5a6;
+                    color: @gray;
                     font-size: .9em;
                     font-weight: 600;
                     letter-spacing: -1px;
@@ -274,7 +344,7 @@ main {
                     margin: 0;
                     padding: 3px 5px 5px 0px;
                     font-size: 1em;
-                    font-weight: 400;
+                    font-weight: 600;
                     text-align: center;
                     letter-spacing: -1px;
                     @media @xs {
@@ -293,10 +363,17 @@ main {
                     padding: 5px 5px 5px 10px;
                     font-size: .8em;
                     font-weight: 400;
-                    color: #95a5a6;
+                    color: @gray;
                     float: right;
                 }
             }
+        }
+    }
+    .panel-footer {
+        a {
+            font-size:  .9em;
+            font-weight: 600;
+            text-decoration: none;
         }
     }
 }
@@ -305,7 +382,7 @@ main {
     margin-bottom: 0;
     position: relative;
     max-height: none;
-    background-color: #fff;
+    background-color: @white;
     .navbar-header {
         float: none;
         text-align: center;
@@ -406,12 +483,12 @@ main {
                 width: 40px;
                 height: 40px;
                 border-radius: 50%;
-                background-color: #fff;
-                border-color: #95a5a6;
+                background-color: @white;
+                border-color: @gray;
                 i {
                     display: block;
                     font-size: 1.3em;
-                    color: #95a5a6;
+                    color: @gray;
                 }
                 &:hover {
                     border-color: @primary;
@@ -473,7 +550,7 @@ main {
             }
             h3 {
                 font-size: .85em;
-                color: #95a5a6;
+                color: @gray;
                 margin: 0;
                 padding: 0 0 .2em 0;
                 transition: all .3s ease;
@@ -487,7 +564,7 @@ main {
                 }
             }
             var {
-                color: #95a5a6;
+                color: @gray;
                 font-size: .9em;
                 transition: all .3s ease;
                 .affix& {
@@ -516,7 +593,7 @@ main {
         }
         @media @xs {
             .active a {
-                background-color: #fff;
+                background-color: @white;
             }
             li {
                 padding-right: 20px;
