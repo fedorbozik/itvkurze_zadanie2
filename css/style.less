@@ -133,7 +133,9 @@ main {
     }
     .header {
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
+        @media @xs {
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
+        }
     }
     nav {
         background-color: @white;
@@ -274,29 +276,29 @@ main {
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            &:hover {
+                background-color: #ddd;
+                cursor: pointer;
+            }
             @media @xs {
                 flex-direction: row;
                 justify-content: flex-start;
                 align-items: center;
                 white-space: nowrap;
-            }
-            &:hover {
-                background-color: #ddd;
-                cursor: pointer;
-            }
-            &:before {
-                display: inline-block;
-                content: '';
-                position: absolute;
-                float: left;
-                margin: 0px 0 0 -15px;
-                height: 3.7em;
-                border: solid 3px @tab2a;
-                transform: scaleY(0);
-                transition: transform 250ms ease-in-out;
-            }
-            &:hover:before {
-                transform: scaleY(1);
+                &:before {
+                    display: inline-block;
+                    content: '';
+                    position: absolute;
+                    float: left;
+                    margin: 0px 0 0 -15px;
+                    height: 3.7em;
+                    border: solid 3px @tab2a;
+                    transform: scaleY(0);
+                    transition: transform 250ms ease-in-out;
+                }
+                &:hover:before {
+                    transform: scaleY(1);
+                }
             }
             .user-info {
                 align-self: flex-start;

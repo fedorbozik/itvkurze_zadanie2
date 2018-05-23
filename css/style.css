@@ -133,7 +133,11 @@ main header {
 }
 main .header {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
+}
+@media only screen and (min-width: 768px) {
+  main .header {
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
+  }
 }
 main nav {
   background-color: #ffffff;
@@ -277,6 +281,10 @@ main section {
       -ms-flex-align: center;
           align-items: center;
 }
+.friend-activity-panel .list-group-item:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
 @media only screen and (min-width: 768px) {
   .friend-activity-panel .list-group-item {
     -webkit-flex-direction: row;
@@ -290,29 +298,25 @@ main section {
             align-items: center;
     white-space: nowrap;
   }
-}
-.friend-activity-panel .list-group-item:hover {
-  background-color: #ddd;
-  cursor: pointer;
-}
-.friend-activity-panel .list-group-item:before {
-  display: inline-block;
-  content: '';
-  position: absolute;
-  float: left;
-  margin: 0px 0 0 -15px;
-  height: 3.7em;
-  border: solid 3px #8e44ad;
-  -webkit-transform: scaleY(0);
-      -ms-transform: scaleY(0);
-          transform: scaleY(0);
-  transition: -webkit-transform 250ms ease-in-out;
-  transition: transform 250ms ease-in-out;
-}
-.friend-activity-panel .list-group-item:hover:before {
-  -webkit-transform: scaleY(1);
-      -ms-transform: scaleY(1);
-          transform: scaleY(1);
+  .friend-activity-panel .list-group-item:before {
+    display: inline-block;
+    content: '';
+    position: absolute;
+    float: left;
+    margin: 0px 0 0 -15px;
+    height: 3.7em;
+    border: solid 3px #8e44ad;
+    -webkit-transform: scaleY(0);
+        -ms-transform: scaleY(0);
+            transform: scaleY(0);
+    transition: -webkit-transform 250ms ease-in-out;
+    transition: transform 250ms ease-in-out;
+  }
+  .friend-activity-panel .list-group-item:hover:before {
+    -webkit-transform: scaleY(1);
+        -ms-transform: scaleY(1);
+            transform: scaleY(1);
+  }
 }
 .friend-activity-panel .list-group-item .user-info {
   -webkit-align-self: flex-start;
