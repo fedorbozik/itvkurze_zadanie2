@@ -300,20 +300,21 @@ main {
     }
 
     .experience-bars {
+        width: 100%;
         .panel-heading {
             background-color: @white;
     //        margin: 0;
-            padding: 5px;
+            padding: 8px;
         }
         .panel-title {
             font-weight: 600;
             color: @gray;
-            font-size: 1.1em;
+            font-size: 1.3em;
         }
         .panel-bars {
             display: flex;
             flex-direction: row;
-            justify-content: flex-start;
+            justify-content: center;
             align-items: stretch;
             align-content: stretch;
             .progress {
@@ -322,7 +323,10 @@ main {
                     vertical-align: bottom;
                     width: 3em;
                     height: 3em;
-                    margin: 0 2em 0 0;
+                    margin: 1em 1em 1em 0;
+                    @media @xs {
+                        margin: 1em 2em 1em 0;
+                    }
                     position: relative;
                     overflow: visible;
                     background-color: #ddd;
@@ -334,19 +338,51 @@ main {
                         position: absolute;
                         bottom: 0;
                         background-color: @primary;
-                        &:before {
+                        &:after {
                             content: attr(aria-valuenow);
-                            text-transform: uppercase;
                             display: block;
                             position: absolute;
                             width: 100%;
                             top: 1em;
                             color: black;
                             text-align: center;
+                            text-transform: uppercase;
                             font-size: .75em;
                             margin-bottom: .2em;
                         }
                     }
+                    #exp-pg-1 {
+                        &:after{
+                            top: 3em;
+                        }
+                    }
+                    #exp-pg-2 {
+                        &:after{
+                            left: -0.75em;
+                            top: 1.1em;
+                        }
+                    }
+                    #exp-pg-3 {
+                        &:after{
+                            top: 2em;
+                        }
+                    }
+                }
+            }
+            .exp-month {
+                width: 25%;
+                padding: 1.20em 0 0 0;
+                text-align: center;
+                b {
+                    color: @primary;
+                    font-size: 2em;
+                }
+                p {
+                    white-space: nowrap;
+                    font-size: .63em;
+                    text-transform: uppercase;
+                    padding: 0;
+                    margin: 0;
                 }
             }
         }
@@ -360,7 +396,7 @@ main {
         .panel-title {
             font-weight: 600;
             color: @gray;
-            font-size: 1.1em;
+            font-size: 1.2em;
         }
     }
 }
@@ -371,12 +407,12 @@ main {
         border-bottom: solid 1px #ddd;
     }
     .panel-title {
-        font-weight: 700;
+        font-weight: 600;
         line-height: 1.5em;
         text-transform: uppercase;
         color: @gray;
-        letter-spacing: -1px;
-        font-size: 1.1em;
+//        letter-spacing: -1px;
+        font-size: 1.2em;
     }
     .list-group {
         &-item {
@@ -481,6 +517,7 @@ main {
         }
     }
     .panel-footer {
+        background-color: #fff;
         a {
             font-size:  .9em;
             font-weight: 600;

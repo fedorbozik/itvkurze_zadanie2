@@ -307,14 +307,17 @@ main section {
 .chart-panel .ct-point {
   stroke: #2dcb71;
 }
+.chart-panel .experience-bars {
+  width: 100%;
+}
 .chart-panel .experience-bars .panel-heading {
   background-color: #ffffff;
-  padding: 5px;
+  padding: 8px;
 }
 .chart-panel .experience-bars .panel-title {
   font-weight: 600;
   color: #95a5a6;
-  font-size: 1.1em;
+  font-size: 1.3em;
 }
 .chart-panel .experience-bars .panel-bars {
   display: -webkit-flex;
@@ -323,9 +326,9 @@ main section {
   -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-justify-content: flex-start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-align-items: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
@@ -338,11 +341,16 @@ main section {
   vertical-align: bottom;
   width: 3em;
   height: 3em;
-  margin: 0 2em 0 0;
+  margin: 1em 1em 1em 0;
   position: relative;
   overflow: visible;
   background-color: #ddd;
   box-shadow: none;
+}
+@media only screen and (min-width: 768px) {
+  .chart-panel .experience-bars .panel-bars .progress-vertical {
+    margin: 1em 2em 1em 0;
+  }
 }
 .chart-panel .experience-bars .panel-bars .progress-vertical .progress-bar {
   overflow: visible;
@@ -352,17 +360,43 @@ main section {
   bottom: 0;
   background-color: #2dcb71;
 }
-.chart-panel .experience-bars .panel-bars .progress-vertical .progress-bar:before {
+.chart-panel .experience-bars .panel-bars .progress-vertical .progress-bar:after {
   content: attr(aria-valuenow);
-  text-transform: uppercase;
   display: block;
   position: absolute;
   width: 100%;
   top: 1em;
   color: black;
   text-align: center;
+  text-transform: uppercase;
   font-size: .75em;
   margin-bottom: .2em;
+}
+.chart-panel .experience-bars .panel-bars .progress-vertical #exp-pg-1:after {
+  top: 3em;
+}
+.chart-panel .experience-bars .panel-bars .progress-vertical #exp-pg-2:after {
+  left: -0.75em;
+  top: 1.1em;
+}
+.chart-panel .experience-bars .panel-bars .progress-vertical #exp-pg-3:after {
+  top: 2em;
+}
+.chart-panel .experience-bars .panel-bars .exp-month {
+  width: 25%;
+  padding: 1.20em 0 0 0;
+  text-align: center;
+}
+.chart-panel .experience-bars .panel-bars .exp-month b {
+  color: #2dcb71;
+  font-size: 2em;
+}
+.chart-panel .experience-bars .panel-bars .exp-month p {
+  white-space: nowrap;
+  font-size: .63em;
+  text-transform: uppercase;
+  padding: 0;
+  margin: 0;
 }
 .chart-panel .experience-chart .panel-heading {
   background-color: #ffffff;
@@ -371,19 +405,18 @@ main section {
 .chart-panel .experience-chart .panel-title {
   font-weight: 600;
   color: #95a5a6;
-  font-size: 1.1em;
+  font-size: 1.2em;
 }
 .friend-activity-panel .panel-heading {
   background-color: #ffffff;
   border-bottom: solid 1px #ddd;
 }
 .friend-activity-panel .panel-title {
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.5em;
   text-transform: uppercase;
   color: #95a5a6;
-  letter-spacing: -1px;
-  font-size: 1.1em;
+  font-size: 1.2em;
 }
 .friend-activity-panel .list-group-item {
   display: -webkit-flex;
@@ -526,6 +559,9 @@ main section {
   font-weight: 400;
   color: #95a5a6;
   float: right;
+}
+.friend-activity-panel .panel-footer {
+  background-color: #fff;
 }
 .friend-activity-panel .panel-footer a {
   font-size: .9em;
