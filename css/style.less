@@ -339,7 +339,7 @@ main {
                         bottom: 0;
                         background-color: @primary;
                         &:after {
-                            content: attr(aria-valuenow);
+//                            content: attr(under-text);
                             display: block;
                             position: absolute;
                             width: 100%;
@@ -353,17 +353,20 @@ main {
                     }
                     #exp-pg-1 {
                         &:after{
+                            content: "course";
                             top: 3em;
                         }
                     }
                     #exp-pg-2 {
                         &:after{
+                            content: "questions";
                             left: -0.75em;
                             top: 1.1em;
                         }
                     }
                     #exp-pg-3 {
                         &:after{
+                            content: "exam";
                             top: 2em;
                         }
                     }
@@ -711,7 +714,7 @@ main {
                 i {
                     display: none;
                     font-size: 70%;
-                    padding: 0 0 -10px 0;
+//                    padding: 0 0 -10px 0;
                 }
                 @media @xs {
                     font-size: 24pt;
