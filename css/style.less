@@ -401,6 +401,30 @@ main {
             i {
                 font-size: 12pt;
             }
+            .open .dropdown-menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                z-index: 1001;
+                float: left;
+                min-width: 160px;
+                padding: 5px 0;
+                margin: 2px 0 0;
+                font-size: 1em;
+                text-align: left;
+                list-style: none;
+                background-color: #fff;
+                background-clip: padding-box;
+                border: 1px solid #ccc;
+                border: 1px solid rgba(0,0,0,.15);
+                border-radius: 4px;
+                box-shadow: 0 6px 12px rgba(0,0,0,.175);
+                li a {
+                    &:hover {
+                        background-color: #ddd;
+                    }
+                }
+            }
             @media @xs {
                 position: relative;
                 top: 10px;
