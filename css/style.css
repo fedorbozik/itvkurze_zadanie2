@@ -271,6 +271,19 @@ main section {
   font-weight: 600;
   padding: 0 2em 0 0;
 }
+.chart-panel .ct-line,
+.chart-panel .ct-point {
+  stroke: #2dcb71;
+}
+.chart-panel .panel-heading {
+  background-color: #ffffff;
+  padding: 5px;
+}
+.chart-panel .panel-title {
+  font-weight: 600;
+  color: #95a5a6;
+  font-size: 1.1em;
+}
 .friend-activity-panel .panel-heading {
   background-color: #ffffff;
   border-bottom: solid 1px #ddd;
@@ -282,9 +295,6 @@ main section {
   color: #95a5a6;
   letter-spacing: -1px;
   font-size: 1.1em;
-}
-.friend-activity-panel .panel-title a {
-  text-decoration: none;
 }
 .friend-activity-panel .list-group-item {
   display: -webkit-flex;
