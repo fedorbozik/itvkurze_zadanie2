@@ -262,6 +262,38 @@ main section {
       -ms-transform: scaleY(1);
           transform: scaleY(1);
 }
+.main-panel .tab-content li .progress-vertical {
+  display: inline-block;
+  vertical-align: bottom;
+  width: 2em;
+  margin: 0 2em 0 0;
+  position: relative;
+  overflow: visible;
+  background-color: transparent;
+  box-shadow: none;
+}
+.main-panel .tab-content li .progress-vertical .progress-bar {
+  overflow: visible;
+  display: block;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: #16a085;
+}
+.main-panel .tab-content li .progress-vertical .progress-bar:before {
+  content: attr(aria-valuenow) "%";
+  display: block;
+  position: absolute;
+  width: 100%;
+  top: -1.7em;
+  color: black;
+  text-align: center;
+  font-size: .75em;
+  margin-bottom: .2em;
+}
+.main-panel .tab-content .panel-footer {
+  background-color: #fff;
+}
 .main-panel .tab-content .panel-footer a {
   font-size: 1em;
   font-weight: 600;
@@ -275,11 +307,68 @@ main section {
 .chart-panel .ct-point {
   stroke: #2dcb71;
 }
-.chart-panel .panel-heading {
+.chart-panel .experience-bars .panel-heading {
   background-color: #ffffff;
   padding: 5px;
 }
-.chart-panel .panel-title {
+.chart-panel .experience-bars .panel-title {
+  font-weight: 600;
+  color: #95a5a6;
+  font-size: 1.1em;
+}
+.chart-panel .experience-bars .panel-bars {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-align-content: stretch;
+      -ms-flex-line-pack: stretch;
+          align-content: stretch;
+}
+.chart-panel .experience-bars .panel-bars .progress-vertical {
+  display: block;
+  vertical-align: bottom;
+  width: 3em;
+  height: 3em;
+  margin: 0 2em 0 0;
+  position: relative;
+  overflow: visible;
+  background-color: #ddd;
+  box-shadow: none;
+}
+.chart-panel .experience-bars .panel-bars .progress-vertical .progress-bar {
+  overflow: visible;
+  display: block;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: #2dcb71;
+}
+.chart-panel .experience-bars .panel-bars .progress-vertical .progress-bar:before {
+  content: attr(aria-valuenow);
+  text-transform: uppercase;
+  display: block;
+  position: absolute;
+  width: 100%;
+  top: 1em;
+  color: black;
+  text-align: center;
+  font-size: .75em;
+  margin-bottom: .2em;
+}
+.chart-panel .experience-chart .panel-heading {
+  background-color: #ffffff;
+  padding: 5px;
+}
+.chart-panel .experience-chart .panel-title {
   font-weight: 600;
   color: #95a5a6;
   font-size: 1.1em;
@@ -789,33 +878,4 @@ main section {
 [class*='fa-']:before {
   position: relative;
   bottom: -0.1em;
-}
-.progress-vertical {
-  display: inline-block;
-  vertical-align: bottom;
-  width: 2em;
-  margin: 0 2em 0 0;
-  position: relative;
-  overflow: visible;
-  background-color: transparent;
-  box-shadow: none;
-}
-.progress-vertical .progress-bar {
-  overflow: visible;
-  display: block;
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  background-color: #16a085;
-}
-.progress-vertical .progress-bar:before {
-  content: attr(aria-valuenow) "%";
-  display: block;
-  position: absolute;
-  width: 100%;
-  top: -1.7em;
-  color: black;
-  text-align: center;
-  font-size: .75em;
-  margin-bottom: .2em;
 }

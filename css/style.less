@@ -246,8 +246,40 @@ main {
             &:hover:before {
                 transform: scaleY(1);
             }
+            .progress {
+                &-vertical {
+                    display: inline-block;
+                    vertical-align: bottom;
+                    width: 2em;
+                    margin: 0 2em 0 0;
+                    position: relative;
+                    overflow: visible;
+                    background-color: transparent;
+                    box-shadow: none;
+                    .progress-bar {
+                        overflow: visible;
+                        display: block;
+                        width: 100%;
+                        position: absolute;
+                        bottom: 0;
+                        background-color: #16a085;
+                        &:before {
+                            content: attr(aria-valuenow) "%";
+                            display: block;
+                            position: absolute;
+                            width: 100%;
+                            top: -1.7em;
+                            color: black;
+                            text-align: center;
+                            font-size: .75em;
+                            margin-bottom: .2em;
+                        }
+                    }
+                }
+            }
         }
         .panel-footer {
+            background-color: #fff;
             a {
                 font-size:  1em;
                 font-weight: 600;
@@ -266,15 +298,70 @@ main {
     .ct-line, .ct-point {
         stroke: @primary;
     }
-    .panel-heading {
-        background-color: @white;
-//        margin: 0;
-        padding: 5px;
+
+    .experience-bars {
+        .panel-heading {
+            background-color: @white;
+    //        margin: 0;
+            padding: 5px;
+        }
+        .panel-title {
+            font-weight: 600;
+            color: @gray;
+            font-size: 1.1em;
+        }
+        .panel-bars {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: stretch;
+            align-content: stretch;
+            .progress {
+                &-vertical {
+                    display: block;
+                    vertical-align: bottom;
+                    width: 3em;
+                    height: 3em;
+                    margin: 0 2em 0 0;
+                    position: relative;
+                    overflow: visible;
+                    background-color: #ddd;
+                    box-shadow: none;
+                    .progress-bar {
+                        overflow: visible;
+                        display: block;
+                        width: 100%;
+                        position: absolute;
+                        bottom: 0;
+                        background-color: @primary;
+                        &:before {
+                            content: attr(aria-valuenow);
+                            text-transform: uppercase;
+                            display: block;
+                            position: absolute;
+                            width: 100%;
+                            top: 1em;
+                            color: black;
+                            text-align: center;
+                            font-size: .75em;
+                            margin-bottom: .2em;
+                        }
+                    }
+                }
+            }
+        }
     }
-    .panel-title {
-        font-weight: 600;
-        color: @gray;
-        font-size: 1.1em;
+    .experience-chart {
+        .panel-heading {
+            background-color: @white;
+    //        margin: 0;
+            padding: 5px;
+        }
+        .panel-title {
+            font-weight: 600;
+            color: @gray;
+            font-size: 1.1em;
+        }
     }
 }
 
@@ -707,36 +794,3 @@ main {
     position: relative;
     bottom: -.10em;
 }
-
-.progress {
-    &-vertical {
-        display: inline-block;
-        vertical-align: bottom;
-        width: 2em;
-        margin: 0 2em 0 0;
-        position: relative;
-        overflow: visible;
-        background-color: transparent;
-        box-shadow: none;
-        .progress-bar {
-            overflow: visible;
-            display: block;
-            width: 100%;
-            position: absolute;
-            bottom: 0;
-            background-color: #16a085;
-            &:before {
-                content: attr(aria-valuenow) "%";
-                display: block;
-                position: absolute;
-                width: 100%;
-                top: -1.7em;
-                color: black;
-                text-align: center;
-                font-size: .75em;
-                margin-bottom: .2em;
-            }
-        }
-    }
-}
-
