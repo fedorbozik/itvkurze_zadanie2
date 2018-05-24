@@ -182,16 +182,24 @@ main {
 .main-panel {
     .nav-tabs {
         font-weight: 700;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: stretch;
+        align-content: stretch;
         a {
+            height: 100%;
             font-size: 8pt;
             text-transform: uppercase;
             letter-spacing: -.6px;
-            align-self: stretch;
+            align-self: auto;
+//            white-space: nowrap;
         }
         b {
             display: block;
             font-size: 28pt;
             margin-bottom: -5px;
+            align-self: auto;
         }
     }
     .tab-content {

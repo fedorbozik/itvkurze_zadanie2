@@ -184,19 +184,38 @@ main section {
 }
 .main-panel .nav-tabs {
   font-weight: 700;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-align-content: stretch;
+      -ms-flex-line-pack: stretch;
+          align-content: stretch;
 }
 .main-panel .nav-tabs a {
+  height: 100%;
   font-size: 8pt;
   text-transform: uppercase;
   letter-spacing: -0.6px;
-  -webkit-align-self: stretch;
-      -ms-flex-item-align: stretch;
-          align-self: stretch;
+  -webkit-align-self: auto;
+      -ms-flex-item-align: auto;
+          align-self: auto;
 }
 .main-panel .nav-tabs b {
   display: block;
   font-size: 28pt;
   margin-bottom: -5px;
+  -webkit-align-self: auto;
+      -ms-flex-item-align: auto;
+          align-self: auto;
 }
 .main-panel .tab-content {
   width: 100%;
